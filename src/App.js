@@ -24,12 +24,12 @@ function App() {
     document.body.style.backgroundColor = "#1d2d56";
     showAlert('success', "Darkmode enabled");
 
-    setInterval(() => {
-      document.title = "TextUtiles is Amazing";
-    }, 1300);
-    setInterval(() => {
-      document.title = "TextUtiles is Perfect";
-    }, 1000);
+    // setInterval(() => {
+    //   document.title = "TextUtiles is Amazing";
+    // }, 1300);
+    // setInterval(() => {
+    //   document.title = "TextUtiles is Perfect";
+    // }, 1000);
   }
  }
 
@@ -46,21 +46,20 @@ function App() {
  }
 
   return (
-    <>
-  <Router>
+    < >
+  <Router >
 
   <Navbar  mode={mode} toggleMode={toggleMode}/>
   <Alert alert={alert}/>
 
   <div className='container '>
   <Routes>
-    <Route exact path='/about' element={<About  />}></Route>
+    <Route exact path='/about' element={<About  mode={mode}/>}></Route>
 <Route  exact path='/' element={<TextAreaTo  mode={mode}   showAlert={showAlert}/>}></Route>   
   </Routes>
   </div>
                                    
   </Router>
-
   </>
   );
 }
